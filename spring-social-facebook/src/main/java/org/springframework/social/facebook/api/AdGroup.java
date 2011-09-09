@@ -20,7 +20,7 @@ public class AdGroup {
 		private int adGroupStatus;
 		private int bidType;
 		private String maxBid; //?? String?
-		private List<AdTargets> targeting;
+		private AdTargets targeting;
 		private List<AdCreative> creative;
 		private long adGroupId;
 		private int startTime;
@@ -28,15 +28,13 @@ public class AdGroup {
 		private List<AdBidInfo> bidInfo;
 		private List<String> disapproveReasonDescriptions;
 		
-		
-		
 		public AdGroup() {
 			super();
 		}
 
 		public AdGroup(long adId, long campaignId, String name,
 				int adGroupStatus, int bidType, String maxBid,
-				List<AdTargets> targeting, List<AdCreative> creative,
+				AdTargets targeting, List<AdCreative> creative,
 				long adGroupId, int startTime, int updatedTime,
 				List<AdBidInfo> bidInfo,
 				List<String> disapproveReasonDescriptions) {
@@ -103,12 +101,12 @@ public class AdGroup {
 		public void setMaxBid(String maxBid) {
 			this.maxBid = maxBid;
 		}
-
-		public List<AdTargets> getTargeting() {
+		
+		public AdTargets getTargeting() {
 			return targeting;
 		}
 
-		public void setTargeting(List<AdTargets> targeting) {
+		public void setTargeting(AdTargets targeting) {
 			this.targeting = targeting;
 		}
 
