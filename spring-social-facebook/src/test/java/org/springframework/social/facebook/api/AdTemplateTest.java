@@ -51,4 +51,26 @@ public class AdTemplateTest extends AbstractFacebookApiTest {
         assertEquals(1001, user.getRole());
     }
 
+    @Test
+    public void getAdGroups() {
+        mockServer.expect(requestTo("https://graph.facebook.com/act_123456/adgroups"))
+                  .andExpect(method(GET))
+                  .andExpect(header("Authorization", "OAuth someAccessToken"))
+                  .andRespond(withResponse(jsonResource("testdata/adgroups"), responseHeaders));
+
+        List<AdGroup> adGroups = facebook.adOperations().getAdGroups("123456");
+        assertNotNull(adGroups);
+    }
+
+    @Test
+    public void getAdGroup() {
+        mockServer.expect(requestTo("https://graph.facebook.com/123456"))
+                  .andExpect(method(GET))
+                  .andExpect(header("Authorization", "OAuth someAccessToken"))
+                  .andRespond(withResponse(jsonResource("testdata/adgroup"), responseHeaders));
+
+        AdGroup adGroup = facebook.adOperations().getAdGroup("123456");
+        assertNotNull(adGroup);
+    }
+
 }
