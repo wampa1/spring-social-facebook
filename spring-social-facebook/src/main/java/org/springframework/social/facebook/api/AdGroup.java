@@ -1,6 +1,8 @@
 package org.springframework.social.facebook.api;
 
+import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author ddcericm
@@ -17,38 +19,41 @@ public class AdGroup {
 		private long adId;
 		private long campaignId;
 		private String name;
+		private int adStatus;
 		private int adGroupStatus;
 		private int bidType;
 		private String maxBid; //?? String?
 		private AdTargets targeting;
-		private List<AdCreative> creative;
+		private List<Long> creativeIds;
 		private long adGroupId;
-		private int startTime;
-		private int updatedTime;
-		private List<AdBidInfo> bidInfo;
+		private Date startTime;
+		private Date endTime;
+		private Date updatedTime;
+		private Map<String, String> bidInfo;
 		private List<String> disapproveReasonDescriptions;
 		
-		public AdGroup() {
-			super();
-		}
+//		public AdGroup() {
+//			super();
+//		}
 
 		public AdGroup(long adId, long campaignId, String name,
-				int adGroupStatus, int bidType, String maxBid,
-				AdTargets targeting, List<AdCreative> creative,
-				long adGroupId, int startTime, int updatedTime,
-				List<AdBidInfo> bidInfo,
+				int adStatus, int adGroupStatus, int bidType, String maxBid,
+				AdTargets targeting, List<Long> creativeIds,
+				long adGroupId, Date startTime, Date endTime,
+				Date updatedTime, Map<String, String> bidInfo,
 				List<String> disapproveReasonDescriptions) {
-			super();
 			this.adId = adId;
 			this.campaignId = campaignId;
 			this.name = name;
+			this.adStatus = adStatus;
 			this.adGroupStatus = adGroupStatus;
 			this.bidType = bidType;
 			this.maxBid = maxBid;
 			this.targeting = targeting;
-			this.creative = creative;
+			this.creativeIds = creativeIds;
 			this.adGroupId = adGroupId;
 			this.startTime = startTime;
+			this.endTime = endTime;
 			this.updatedTime = updatedTime;
 			this.bidInfo = bidInfo;
 			this.disapproveReasonDescriptions = disapproveReasonDescriptions;
@@ -78,7 +83,15 @@ public class AdGroup {
 			this.name = name;
 		}
 
-		public int getAdGroupStatus() {
+		public int getAdStatus() {
+            return adStatus;
+        }
+
+        public void setAdStatus(int adStatus) {
+            this.adStatus = adStatus;
+        }
+
+        public int getAdGroupStatus() {
 			return adGroupStatus;
 		}
 
@@ -110,12 +123,12 @@ public class AdGroup {
 			this.targeting = targeting;
 		}
 
-		public List<AdCreative> getCreative() {
-			return creative;
+		public List<Long> getCreativeIds() {
+			return creativeIds;
 		}
 
-		public void setCreative(List<AdCreative> creative) {
-			this.creative = creative;
+		public void setCreativeIds(List<Long> creativeIds) {
+			this.creativeIds = creativeIds;
 		}
 
 		public long getAdGroupId() {
@@ -126,27 +139,35 @@ public class AdGroup {
 			this.adGroupId = adGroupId;
 		}
 
-		public int getStartTime() {
+		public Date getStartTime() {
 			return startTime;
 		}
 
-		public void setStartTime(int startTime) {
+		public void setStartTime(Date startTime) {
 			this.startTime = startTime;
 		}
 
-		public int getUpdatedTime() {
+		public Date getEndTime() {
+            return endTime;
+        }
+
+        public void setEndTime(Date endTime) {
+            this.endTime = endTime;
+        }
+
+        public Date getUpdatedTime() {
 			return updatedTime;
 		}
 
-		public void setUpdatedTime(int updatedTime) {
+		public void setUpdatedTime(Date updatedTime) {
 			this.updatedTime = updatedTime;
 		}
 
-		public List<AdBidInfo> getBidInfo() {
+		public Map<String, String> getBidInfo() {
 			return bidInfo;
 		}
 
-		public void setBidInfo(List<AdBidInfo> bidInfo) {
+		public void setBidInfo(Map<String, String> bidInfo) {
 			this.bidInfo = bidInfo;
 		}
 
