@@ -22,7 +22,7 @@ public class AdTargets {
 	private Integer ageMin;
 	private Integer ageMax;
 	private BroadAge broadAge;
-	private RelationshipStatus relationshipStatus;
+	private List<RelationshipStatus> relationshipStatuses;
 	private UserEvent userEvent;
 	
 	// Facebook Connections
@@ -37,7 +37,33 @@ public class AdTargets {
 	private List<Integer> collegeYears;
 	private List<String> collegeMajors;
 	
-	public void setGenders( List<Gender> genders ) {
+	public AdTargets(List<String> countries, List<String> cities, List<String> zips, List<String> regions, Integer radius, List<String> locales, List<String> keywords, List<UserAdCluster> userAdClusters, List<Integer> interestedIn, List<Gender> genders, Integer ageMin, Integer ageMax, BroadAge broadAge, List<RelationshipStatus> relationshipStatuses, UserEvent userEvent, List<String> connections, List<String> excludedConnections, List<String> friendsOfConnections, List<String> collegeNetworks, List<String> workNetworks, List<EducationStatus> educationStatuses, List<Integer> collegeYears, List<String> collegeMajors) {
+        this.countries = countries;
+        this.cities = cities;
+        this.zips = zips;
+        this.regions = regions;
+        this.radius = radius;
+        this.locales = locales;
+        this.keywords = keywords;
+        this.userAdClusters = userAdClusters;
+        this.interestedIn = interestedIn;
+        this.genders = genders;
+        this.ageMin = ageMin;
+        this.ageMax = ageMax;
+        this.broadAge = broadAge;
+        this.relationshipStatuses = relationshipStatuses;
+        this.userEvent = userEvent;
+        this.connections = connections;
+        this.excludedConnections = excludedConnections;
+        this.friendsOfConnections = friendsOfConnections;
+        this.collegeNetworks = collegeNetworks;
+        this.workNetworks = workNetworks;
+        this.educationStatuses = educationStatuses;
+        this.collegeYears = collegeYears;
+        this.collegeMajors = collegeMajors;
+    }
+
+    public void setGenders( List<Gender> genders ) {
 		this.genders = genders;
 	}
 	
@@ -141,12 +167,12 @@ public class AdTargets {
 		this.broadAge = broadAge;
 	}
 
-	public RelationshipStatus getRelationshipStatus() {
-		return relationshipStatus;
+	public List<RelationshipStatus> getRelationshipStatuses() {
+		return relationshipStatuses;
 	}
 
-	public void setRelationshipStatus(RelationshipStatus relationshipStatus) {
-		this.relationshipStatus = relationshipStatus;
+	public void setRelationshipStatuses(List<RelationshipStatus> relationshipStatus) {
+		this.relationshipStatuses = relationshipStatus;
 	}
 
 	public UserEvent getUserEvent() {
