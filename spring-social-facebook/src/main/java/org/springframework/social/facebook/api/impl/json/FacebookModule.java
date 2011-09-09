@@ -19,6 +19,7 @@ import org.codehaus.jackson.Version;
 import org.codehaus.jackson.map.module.SimpleModule;
 import org.springframework.social.facebook.api.Account;
 import org.springframework.social.facebook.api.AdAccount;
+import org.springframework.social.facebook.api.AdAccountGroup;
 import org.springframework.social.facebook.api.AdAccountUser;
 import org.springframework.social.facebook.api.Album;
 import org.springframework.social.facebook.api.Checkin;
@@ -92,5 +93,6 @@ public class FacebookModule extends SimpleModule {
 		context.setMixInAnnotations(MusicPost.class, MusicPostMixin.class);
 		context.setMixInAnnotations(AdAccount.class, AdAccountMixin.class);
 		context.setMixInAnnotations(AdAccountUser.class, AdAccountUserMixin.class);
+		context.setMixInAnnotations(AdAccountGroup.class, AdAccountGroupMixin.class);
 	}
 }
