@@ -10,9 +10,10 @@ import java.util.List;
  */
 public class AdAccount {
 
+    private String id;
     private String accountId;
     private String name;
-    private AdAccountStatus status;
+    private int status;
     private int dailySpendLimit;
     private List<AdAccountUser> users;
     private String currency;
@@ -21,7 +22,8 @@ public class AdAccount {
     private List<String> capabilities; // marked as "reserved for future use"
     private List<AdAccountGroup> accountGroups;
 
-    public AdAccount(String accountId, String name, AdAccountStatus status, int dailySpendLimit, List<AdAccountUser> users, String currency, int timezoneId, String timezoneName, List<String> capabilities, List<AdAccountGroup> accountGroups) {
+    public AdAccount(String id, String accountId, String name, int status, int dailySpendLimit, List<AdAccountUser> users, String currency, int timezoneId, String timezoneName, List<String> capabilities, List<AdAccountGroup> accountGroups) {
+        this.id = id;
         this.accountId = accountId;
         this.name = name;
         this.status = status;
@@ -32,6 +34,14 @@ public class AdAccount {
         this.timezoneName = timezoneName;
         this.capabilities = capabilities;
         this.accountGroups = accountGroups;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getAccountId() {
@@ -50,11 +60,11 @@ public class AdAccount {
         this.name = name;
     }
 
-    public AdAccountStatus getStatus() {
+    public int getStatus() {
         return status;
     }
 
-    public void setStatus(AdAccountStatus status) {
+    public void setStatus(int status) {
         this.status = status;
     }
 
