@@ -247,7 +247,7 @@ public class AdTargets {
 	}
 
 	public enum UserEvent {
-		BIRTHDAY(1);
+		BIRTHDAY(1), NULL(null);
 		private Integer userEvent;
 		private UserEvent(Integer userEvent){ this.userEvent = userEvent; }
 		public Integer getUserEvent() { return userEvent; }
