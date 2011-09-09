@@ -40,7 +40,6 @@ public class AdTemplateTest extends AbstractFacebookApiTest {
         List<AdAccountUser> users = adAccount.getUsers();
         assertNotNull(users);
         assertEquals(2, users.size());
-        
         AdAccountUser user = users.get(0);
         assertNotNull(user);
         assertEquals("545071234", user.getUid());
