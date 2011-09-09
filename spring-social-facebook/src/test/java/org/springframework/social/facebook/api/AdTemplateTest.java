@@ -24,22 +24,28 @@ public class AdTemplateTest extends AbstractFacebookApiTest {
 
         AdAccount adAccount = facebook.adOperations().getAdAccount("123456");
         assertNotNull(adAccount);
-        assertEquals("act_6712834698284", adAccount.getId());
-        assertEquals("6712834698284", adAccount.getAccountId());
-        assertEquals("Some Name", adAccount.getName());
+        assertEquals("act_368811234", adAccount.getId());
+        assertNull(adAccount.getAccountId());
+        assertEquals("My Account Name", adAccount.getName());
         assertEquals(1, adAccount.getStatus());
         assertEquals("USD", adAccount.getCurrency());
-        assertEquals(7, adAccount.getTimezoneId());
-        assertEquals("America/New_York", adAccount.getTimezoneName());
+        assertEquals(1, adAccount.getTimezoneId());
+        assertEquals("America/Los_Angeles", adAccount.getTimezoneName());
         assertEquals(25000, adAccount.getDailySpendLimit());
-        assertEquals(Arrays.asList("cap1", "cap2", "cap3"), adAccount.getCapabilities());
+        assertEquals(Arrays.asList(), adAccount.getCapabilities());
         
         List<AdAccountUser> users = adAccount.getUsers();
         assertNotNull(users);
-        assertEquals(1, users.size());
+        assertEquals(2, users.size());
         AdAccountUser user = users.get(0);
         assertNotNull(user);
-        assertEquals("67284301", user.getUid());
+        assertEquals("545071234", user.getUid());
+        assertEquals(Arrays.asList(1, 2, 3, 4, 5, 7), user.getPermissions());
+        assertEquals(1002, user.getRole());
+        
+        user = users.get(1);
+        assertNotNull(user);
+        assertEquals("1270651234", user.getUid());
         assertEquals(Arrays.asList(1, 2, 3, 4, 5, 7), user.getPermissions());
         assertEquals(1001, user.getRole());
     }
