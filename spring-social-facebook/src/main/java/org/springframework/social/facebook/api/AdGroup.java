@@ -9,6 +9,8 @@ import java.util.List;
  *
  */
 
+//ToDo: Will, can you look at the adgroup definition and help me figure out how the complex Array types for Targeting (and bid_info) work?
+
 
 public class AdGroup {
 
