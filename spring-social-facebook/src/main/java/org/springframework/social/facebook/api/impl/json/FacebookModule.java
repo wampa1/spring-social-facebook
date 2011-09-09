@@ -21,6 +21,8 @@ import org.springframework.social.facebook.api.Account;
 import org.springframework.social.facebook.api.AdAccount;
 import org.springframework.social.facebook.api.AdAccountGroup;
 import org.springframework.social.facebook.api.AdAccountUser;
+import org.springframework.social.facebook.api.AdGroup;
+import org.springframework.social.facebook.api.AdTargets;
 import org.springframework.social.facebook.api.Album;
 import org.springframework.social.facebook.api.Checkin;
 import org.springframework.social.facebook.api.CheckinPost;
@@ -94,5 +96,7 @@ public class FacebookModule extends SimpleModule {
 		context.setMixInAnnotations(AdAccount.class, AdAccountMixin.class);
 		context.setMixInAnnotations(AdAccountUser.class, AdAccountUserMixin.class);
 		context.setMixInAnnotations(AdAccountGroup.class, AdAccountGroupMixin.class);
+		context.setMixInAnnotations(AdGroup.class, AdGroupMixin.class);
+		context.setMixInAnnotations(AdTargets.class, AdTargetsMixin.class);
 	}
 }
