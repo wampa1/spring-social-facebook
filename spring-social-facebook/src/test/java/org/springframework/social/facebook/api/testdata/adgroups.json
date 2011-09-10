@@ -25,6 +25,17 @@
       "targeting": {
         "age_max": 64,
         "age_min": 18,
+        "radius" : 50,
+        "cities": [
+          {
+            "id": "2420467",
+            "name": "Manhattan Beach, CA"
+          },
+          {
+            "id": "2532970",
+            "name": "Burlington, VT"
+          }
+        ], 
         "countries": [
           "US"
         ],

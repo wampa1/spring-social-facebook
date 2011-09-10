@@ -5,6 +5,9 @@ import static org.springframework.http.HttpMethod.*;
 import static org.springframework.social.test.client.RequestMatchers.*;
 import static org.springframework.social.test.client.ResponseCreators.*;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.List;
 
@@ -52,14 +55,39 @@ public class AdTemplateTest extends AbstractFacebookApiTest {
     }
 
     @Test
-    public void getAdGroups() {
+    public void getAdGroups() throws ParseException {
         mockServer.expect(requestTo("https://graph.facebook.com/act_123456/adgroups"))
                   .andExpect(method(GET))
                   .andExpect(header("Authorization", "OAuth someAccessToken"))
                   .andRespond(withResponse(jsonResource("testdata/adgroups"), responseHeaders));
 
+        DateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ");
+        
         List<AdGroup> adGroups = facebook.adOperations().getAdGroups("123456");
         assertNotNull(adGroups);
+        assertEquals(1, adGroups.size());
+        
+        AdGroup adGroup = adGroups.get(0);
+        assertNotNull(adGroup);
+        assertEquals(df.parse("2011-09-09T12:58:18+0000"), adGroup.getUpdatedTime());
+        
+        AdTargeting targeting = adGroup.getTargeting();
+        assertNotNull(targeting);
+        assertEquals("50", targeting.getRadius());
+        
+        List<City> cities = targeting.getCities();
+        assertNotNull(cities);
+        assertEquals(2, cities.size());
+        
+        City city = cities.get(0);
+        assertNotNull(city);
+        assertEquals("2420467", city.getId());
+        assertEquals("Manhattan Beach, CA", city.getName());
+        
+        city = cities.get(1);
+        assertNotNull(city);
+        assertEquals("2532970", city.getId());
+        assertEquals("Burlington, VT", city.getName());
     }
 
     @Test
