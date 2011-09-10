@@ -6,7 +6,7 @@ import java.util.Map;
 
 import org.codehaus.jackson.annotate.JsonCreator;
 import org.codehaus.jackson.annotate.JsonProperty;
-import org.springframework.social.facebook.api.AdTargets;
+import org.springframework.social.facebook.api.AdTargeting;
 
 //@JsonIgnoreProperties(ignoreUnknown = true)
 class AdGroupMixin {
@@ -21,7 +21,7 @@ class AdGroupMixin {
                  @JsonProperty("adgroup_status") int adGroupStatus,
                  @JsonProperty("bid_type") int bidType,
                  @JsonProperty("max_bid") String maxBid,
-                 @JsonProperty("targeting") AdTargets targeting,
+                 @JsonProperty("targeting") AdTargeting targeting,
                  @JsonProperty("creative_ids") List<Long> creativeIds,
                  @JsonProperty("adgroup_id") long adGroupId,
                  @JsonProperty("start_time") Date startTime,
