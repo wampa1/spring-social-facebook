@@ -4,10 +4,10 @@ import org.codehaus.jackson.annotate.JsonCreator;
 import org.codehaus.jackson.annotate.JsonProperty;
 
 //@JsonIgnoreProperties(ignoreUnknown = true)
-class CityMixin {
+class IdNameMixin {
 
     @JsonCreator
-    CityMixin(@JsonProperty("id") String id,
+    IdNameMixin(@JsonProperty("id") String id,
               @JsonProperty("name") String name) {}
 
 }

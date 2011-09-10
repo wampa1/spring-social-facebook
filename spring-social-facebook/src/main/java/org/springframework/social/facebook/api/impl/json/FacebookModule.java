@@ -45,6 +45,7 @@ import org.springframework.social.facebook.api.Photo.Image;
 import org.springframework.social.facebook.api.PhotoPost;
 import org.springframework.social.facebook.api.Post;
 import org.springframework.social.facebook.api.Reference;
+import org.springframework.social.facebook.api.Region;
 import org.springframework.social.facebook.api.StatusPost;
 import org.springframework.social.facebook.api.SwfPost;
 import org.springframework.social.facebook.api.Tag;
@@ -99,6 +100,7 @@ public class FacebookModule extends SimpleModule {
 		context.setMixInAnnotations(AdAccountGroup.class, AdAccountGroupMixin.class);
 		context.setMixInAnnotations(AdGroup.class, AdGroupMixin.class);
 		context.setMixInAnnotations(AdTargeting.class, AdTargetingMixin.class);
-		context.setMixInAnnotations(City.class, CityMixin.class);
+		context.setMixInAnnotations(City.class, IdNameMixin.class);
+		context.setMixInAnnotations(Region.class, IdNameMixin.class);
 	}
 }
