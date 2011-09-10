@@ -13,6 +13,8 @@ class AdGroupMixin {
 
     @JsonCreator
     AdGroupMixin(@JsonProperty("ad_id") long adId,
+                 @JsonProperty("id") long id,
+                 @JsonProperty("account_id") long accountId,
                  @JsonProperty("campaign_id") long campaignId,
                  @JsonProperty("name") String name,
                  @JsonProperty("ad_status") int status,
