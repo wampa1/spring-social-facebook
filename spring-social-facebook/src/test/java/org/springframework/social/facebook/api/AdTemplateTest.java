@@ -88,6 +88,28 @@ public class AdTemplateTest extends AbstractFacebookApiTest {
         assertNotNull(city);
         assertEquals("2532970", city.getId());
         assertEquals("Burlington, VT", city.getName());
+        
+        List<Region> regions = targeting.getRegions();
+        assertNotNull(regions);
+        assertEquals(2, regions.size());
+        
+        Region region = regions.get(0);
+        assertNotNull(region);
+        assertEquals("50", region.getId());
+        assertEquals("Vermont", region.getName());
+        
+        region = regions.get(1);
+        assertNotNull(region);
+        assertEquals("6", region.getId());
+        assertEquals("California", region.getName());
+        
+        List<String> zips = targeting.getZips();
+        assertNotNull(zips);
+        assertEquals(Arrays.asList("05401", "05446", "90210", "90266", "90267"), zips);
+        
+        List<String> countries = targeting.getCountries();
+        assertNotNull(countries);
+        assertEquals(Arrays.asList("US", "CA"), countries);
     }
 
     @Test
