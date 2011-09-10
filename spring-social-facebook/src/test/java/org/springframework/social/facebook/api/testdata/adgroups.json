@@ -26,6 +26,16 @@
         "age_max": 64,
         "age_min": 18,
         "radius" : 50,
+        "regions": [
+          {
+            "id": "50",
+            "name": "Vermont"
+          },
+          {
+            "id": "6",
+            "name": "California"
+          }
+        ], 
         "cities": [
           {
             "id": "2420467",
@@ -36,9 +46,45 @@
             "name": "Burlington, VT"
           }
         ], 
+        "zips": [
+          "05401",
+          "05446",
+          "90210",
+          "90266",
+          "90267"
+        ], 
         "countries": [
-          "US"
+          "US",
+          "CA"
         ],
+        "user_adclusters": [
+          {
+            "id": "6002714398172",
+            "name": "Newlywed (<1 year)"
+          },
+          {
+            "id": "6002714398772",
+            "name": "Engaged (<6 months)"
+          },
+          {
+            "id": "6002714885172",
+            "name": "Cooking"
+          }
+        ],
+        "relationship_statuses": [
+          1,
+          2,
+          3
+        ],
+        "education_statuses": [
+          3
+        ], 
+        "excluded_connections": [
+          {
+            "id": "125614587505822",
+            "name": "Demo Motors"
+          }
+        ], 
         "friends_of_connections": [
           {
             "id": "47190376042235",

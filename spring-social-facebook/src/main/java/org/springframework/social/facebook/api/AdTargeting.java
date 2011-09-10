@@ -8,7 +8,7 @@ public class AdTargeting {
 	private List<String> countries;
 	private List<City> cities;
 	private List<String> zips;
-	private List<String> regions;
+	private List<Region> regions;
 	private String radius;
 	private List<String> locales;
 	
@@ -37,7 +37,7 @@ public class AdTargeting {
 	private List<Integer> collegeYears;
 	private List<String> collegeMajors;
 	
-	public AdTargeting(List<String> countries, List<City> cities, List<String> zips, List<String> regions, String radius, List<String> locales, List<String> keywords, List<UserAdCluster> userAdClusters, List<Integer> interestedIn, List<Gender> genders, Integer ageMin, Integer ageMax, BroadAge broadAge, List<RelationshipStatus> relationshipStatuses, UserEvent userEvent, List<String> connections, List<String> excludedConnections, List<String> friendsOfConnections, List<String> collegeNetworks, List<String> workNetworks, List<EducationStatus> educationStatuses, List<Integer> collegeYears, List<String> collegeMajors) {
+	public AdTargeting(List<String> countries, List<City> cities, List<String> zips, List<Region> regions, String radius, List<String> locales, List<String> keywords, List<UserAdCluster> userAdClusters, List<Integer> interestedIn, List<Gender> genders, Integer ageMin, Integer ageMax, BroadAge broadAge, List<RelationshipStatus> relationshipStatuses, UserEvent userEvent, List<String> connections, List<String> excludedConnections, List<String> friendsOfConnections, List<String> collegeNetworks, List<String> workNetworks, List<EducationStatus> educationStatuses, List<Integer> collegeYears, List<String> collegeMajors) {
         this.countries = countries;
         this.cities = cities;
         this.zips = zips;
@@ -95,11 +95,11 @@ public class AdTargeting {
 		this.zips = zips;
 	}
 
-	public List<String> getRegions() {
+	public List<Region> getRegions() {
 		return regions;
 	}
 
-	public void setRegions(List<String> regions) {
+	public void setRegions(List<Region> regions) {
 		this.regions = regions;
 	}
 
@@ -249,43 +249,76 @@ public class AdTargeting {
 
 	
 	public enum Gender {
-		MALE(1), FEMALE(2), ALL(null);
-		private Integer gender;
-		private Gender(Integer gender){ this.gender = gender; }
-		public Integer getGender() { return gender; }
-		public void setGender(Integer gender) { this.gender = gender; }
+		UNUSED_0(0), MALE(1), FEMALE(2);
+		private int gender;
+		private Gender(int gender){ this.gender = gender; }
+		public int getGender() { return gender; }
+		public static Gender valueOf(int gender) {
+		    Gender result = null;
+		    
+		    switch ( gender ) {
+		    case 1:
+		        result = MALE;
+		        break;
+		    case 2:
+		        result = FEMALE;
+		        break;
+		    default:
+		        throw new EnumConstantNotPresentException(Gender.class, String.valueOf(gender));
+		    }
+		    
+		    return result;
+		}
 	}
 
 	public enum BroadAge {
 		DISABLED(0), ENABLED(1);
-		private Integer broadAge;
-		private BroadAge(Integer broadAge){ this.broadAge = broadAge; }
-		public Integer getBroadAge() { return broadAge; }
-		public void setBroadAge(Integer broadAge) { this.broadAge = broadAge; }
+		private int broadAge;
+		private BroadAge(int broadAge){ this.broadAge = broadAge; }
+		public int getBroadAge() { return broadAge; }
+		public void setBroadAge(int broadAge) { this.broadAge = broadAge; }
 	}
 	
 	public enum RelationshipStatus {
-		SINGLE(1), IN_RELATIONSHIP(2), MARRIED(3), ENGAGED(4), ALL(null);
-		private Integer relationshipStatus;
-		private RelationshipStatus(Integer relationshipStatus){ this.relationshipStatus = relationshipStatus; }
-		public Integer getRelationshipStatus() { return relationshipStatus; }
-		public void setRelationshipStatus(Integer relationshipStatus) { this.relationshipStatus = relationshipStatus; }
+		UNUSED_0(0), SINGLE(1), IN_RELATIONSHIP(2), MARRIED(3), ENGAGED(4);
+		private int relationshipStatus;
+		private RelationshipStatus(int relationshipStatus){ this.relationshipStatus = relationshipStatus; }
+		public int getRelationshipStatus() { return relationshipStatus; }
+		public void setRelationshipStatus(int relationshipStatus) { this.relationshipStatus = relationshipStatus; }
 	}
 
 	public enum UserEvent {
-		BIRTHDAY(1), NULL(null);
-		private Integer userEvent;
-		private UserEvent(Integer userEvent){ this.userEvent = userEvent; }
-		public Integer getUserEvent() { return userEvent; }
-		public void setUserEvent(Integer userEvent) { this.userEvent = userEvent; }
+		UNUSED_0(0), BIRTHDAY(1);
+		private int userEvent;
+		private UserEvent(int userEvent){ this.userEvent = userEvent; }
+		public int getUserEvent() { return userEvent; }
+		public void setUserEvent(int userEvent) { this.userEvent = userEvent; }
 	}
 
 	public enum EducationStatus {
-		HIGH_SCHOOL(1), UNDERGRAD(2), ALUM(3) ;
-		private Integer educationStatus;
-		private EducationStatus(Integer educationStatus){ this.educationStatus = educationStatus; }
-		public Integer getEducationStatus() { return educationStatus; }
-		public void setEducationStatus(Integer educationStatus) { this.educationStatus = educationStatus; }
+		UNUSED_0(0), HIGH_SCHOOL(1), UNDERGRAD(2), ALUM(3);
+		private int educationStatus;
+		private EducationStatus(int educationStatus){ this.educationStatus = educationStatus; }
+		public int getEducationStatus() { return educationStatus; }
+		public static EducationStatus valueOf(int educationStatus) {
+		    EducationStatus result = null;
+		    
+		    switch ( educationStatus ) {
+		    case 1:
+		        result = HIGH_SCHOOL;
+		        break;
+		    case 2:
+		        result = UNDERGRAD;
+		        break;
+		    case 3:
+		        result = ALUM;
+		        break;
+		    default:
+		        throw new EnumConstantNotPresentException(EducationStatus.class, String.valueOf(educationStatus));
+		    }
+		    
+		    return result;
+		}
 	}
 		
 
