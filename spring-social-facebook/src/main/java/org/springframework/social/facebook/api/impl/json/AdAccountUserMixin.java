@@ -3,10 +3,9 @@ package org.springframework.social.facebook.api.impl.json;
 import java.util.List;
 
 import org.codehaus.jackson.annotate.JsonCreator;
-import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 import org.codehaus.jackson.annotate.JsonProperty;
 
-@JsonIgnoreProperties(ignoreUnknown = true)
+//@JsonIgnoreProperties(ignoreUnknown = true)
 class AdAccountUserMixin {
 
     @JsonCreator

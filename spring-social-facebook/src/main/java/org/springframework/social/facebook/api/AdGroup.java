@@ -17,6 +17,8 @@ import java.util.Map;
 public class AdGroup {
 
 		private long adId;
+		private long id;
+		private long accountId;
 		private long campaignId;
 		private String name;
 		private int adStatus;
@@ -36,13 +38,15 @@ public class AdGroup {
 //			super();
 //		}
 
-		public AdGroup(long adId, long campaignId, String name,
+		public AdGroup(long adId, long id, long accountId, long campaignId, String name,
 				int adStatus, int adGroupStatus, int bidType, String maxBid,
 				AdTargets targeting, List<Long> creativeIds,
 				long adGroupId, Date startTime, Date endTime,
 				Date updatedTime, Map<String, String> bidInfo,
 				List<String> disapproveReasonDescriptions) {
 			this.adId = adId;
+			this.id = id;
+			this.accountId = accountId;
 			this.campaignId = campaignId;
 			this.name = name;
 			this.adStatus = adStatus;
@@ -67,7 +71,23 @@ public class AdGroup {
 			this.adId = adId;
 		}
 
-		public long getCampaignId() {
+		public long getId() {
+            return id;
+        }
+
+        public void setId(long id) {
+            this.id = id;
+        }
+
+        public long getAccountId() {
+            return accountId;
+        }
+
+        public void setAccountId(long accountId) {
+            this.accountId = accountId;
+        }
+
+        public long getCampaignId() {
 			return campaignId;
 		}
 
