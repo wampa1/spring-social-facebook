@@ -9,4 +9,5 @@ spring-social-core/src/test/java/exploration
 .project
 **/.project
 **/.settings
+bin
 **/bin
