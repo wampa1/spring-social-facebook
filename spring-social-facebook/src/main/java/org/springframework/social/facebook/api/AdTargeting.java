@@ -2,14 +2,14 @@ package org.springframework.social.facebook.api;
 
 import java.util.List;
 
-public class AdTargets {
+public class AdTargeting {
 
 	// Location Targets
 	private List<String> countries;
-	private List<String> cities;
+	private List<City> cities;
 	private List<String> zips;
 	private List<String> regions;
-	private Integer radius;
+	private String radius;
 	private List<String> locales;
 	
 	// Likes / Interest Targets	
@@ -37,7 +37,7 @@ public class AdTargets {
 	private List<Integer> collegeYears;
 	private List<String> collegeMajors;
 	
-	public AdTargets(List<String> countries, List<String> cities, List<String> zips, List<String> regions, Integer radius, List<String> locales, List<String> keywords, List<UserAdCluster> userAdClusters, List<Integer> interestedIn, List<Gender> genders, Integer ageMin, Integer ageMax, BroadAge broadAge, List<RelationshipStatus> relationshipStatuses, UserEvent userEvent, List<String> connections, List<String> excludedConnections, List<String> friendsOfConnections, List<String> collegeNetworks, List<String> workNetworks, List<EducationStatus> educationStatuses, List<Integer> collegeYears, List<String> collegeMajors) {
+	public AdTargeting(List<String> countries, List<City> cities, List<String> zips, List<String> regions, String radius, List<String> locales, List<String> keywords, List<UserAdCluster> userAdClusters, List<Integer> interestedIn, List<Gender> genders, Integer ageMin, Integer ageMax, BroadAge broadAge, List<RelationshipStatus> relationshipStatuses, UserEvent userEvent, List<String> connections, List<String> excludedConnections, List<String> friendsOfConnections, List<String> collegeNetworks, List<String> workNetworks, List<EducationStatus> educationStatuses, List<Integer> collegeYears, List<String> collegeMajors) {
         this.countries = countries;
         this.cities = cities;
         this.zips = zips;
@@ -79,11 +79,11 @@ public class AdTargets {
 		this.countries = countries;
 	}
 
-	public List<String> getCities() {
+	public List<City> getCities() {
 		return cities;
 	}
 
-	public void setCities(List<String> cities) {
+	public void setCities(List<City> cities) {
 		this.cities = cities;
 	}
 
@@ -103,11 +103,11 @@ public class AdTargets {
 		this.regions = regions;
 	}
 
-	public Integer getRadius() {
+	public String getRadius() {
 		return radius;
 	}
 
-	public void setRadius(Integer radius) {
+	public void setRadius(String radius) {
 		this.radius = radius;
 	}
 
