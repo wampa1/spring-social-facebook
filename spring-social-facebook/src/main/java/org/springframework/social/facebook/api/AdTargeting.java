@@ -272,11 +272,23 @@ public class AdTargeting {
 	}
 
 	public enum BroadAge {
-		DISABLED(0), ENABLED(1);
+		UNUSED_0(0), ENABLED(1);
 		private int broadAge;
 		private BroadAge(int broadAge){ this.broadAge = broadAge; }
 		public int getBroadAge() { return broadAge; }
-		public void setBroadAge(int broadAge) { this.broadAge = broadAge; }
+		public static BroadAge valueOf(int broadAge) {
+		    BroadAge result = null;
+		    
+		    switch ( broadAge ) {
+		    case 1:
+		        result = ENABLED;
+		        break;
+		    default:
+		        throw new EnumConstantNotPresentException(BroadAge.class, String.valueOf(broadAge));
+		    }
+		    
+		    return result;
+		}
 	}
 	
 	public enum RelationshipStatus {
@@ -284,7 +296,28 @@ public class AdTargeting {
 		private int relationshipStatus;
 		private RelationshipStatus(int relationshipStatus){ this.relationshipStatus = relationshipStatus; }
 		public int getRelationshipStatus() { return relationshipStatus; }
-		public void setRelationshipStatus(int relationshipStatus) { this.relationshipStatus = relationshipStatus; }
+		public static RelationshipStatus valueOf(int relationshipStatus) {
+		    RelationshipStatus result = null;
+		    
+		    switch ( relationshipStatus ) {
+		    case 1:
+		        result = SINGLE;
+		        break;
+		    case 2:
+		        result = IN_RELATIONSHIP;
+		        break;
+		    case 3:
+		        result = MARRIED;
+		        break;
+		    case 4:
+		        result = ENGAGED;
+		        break;
+		    default:
+		        throw new EnumConstantNotPresentException(RelationshipStatus.class, String.valueOf(relationshipStatus));
+		    }
+		    
+		    return result;
+		}
 	}
 
 	public enum UserEvent {
@@ -292,7 +325,19 @@ public class AdTargeting {
 		private int userEvent;
 		private UserEvent(int userEvent){ this.userEvent = userEvent; }
 		public int getUserEvent() { return userEvent; }
-		public void setUserEvent(int userEvent) { this.userEvent = userEvent; }
+		public static UserEvent valueOf(int userEvent) {
+		    UserEvent result = null;
+		    
+		    switch ( userEvent ) {
+		    case 1:
+		        result = BIRTHDAY;
+		        break;
+		    default:
+		        throw new EnumConstantNotPresentException(UserEvent.class, String.valueOf(userEvent));
+		    }
+		    
+		    return result;
+		}
 	}
 
 	public enum EducationStatus {
