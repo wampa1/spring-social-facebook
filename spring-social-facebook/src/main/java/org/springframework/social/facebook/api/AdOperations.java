@@ -10,4 +10,8 @@ public interface AdOperations {
 
     AdGroup getAdGroup(String adGroupId);
 
+    List<AdCreative> getCreatives(String adAccountId);
+
+    AdCreative getCreative(String creativeId);
+
 }

@@ -3,6 +3,7 @@ package org.springframework.social.facebook.api.impl;
 import java.util.List;
 
 import org.springframework.social.facebook.api.AdAccount;
+import org.springframework.social.facebook.api.AdCreative;
 import org.springframework.social.facebook.api.AdGroup;
 import org.springframework.social.facebook.api.AdOperations;
 import org.springframework.social.facebook.api.GraphApi;
@@ -31,6 +32,16 @@ public class AdTemplate extends AbstractFacebookOperations implements AdOperatio
     @Override
     public AdGroup getAdGroup(String adGroupId) {
         return graphApi.fetchObject(adGroupId, AdGroup.class);
+    }
+
+    @Override
+    public List<AdCreative> getCreatives(String adAccountId) {
+        return graphApi.fetchConnections(ACT_PREFIX + adAccountId, "adcreatives", AdCreative.class);
+    }
+
+    @Override
+    public AdCreative getCreative(String creativeId) {
+        return graphApi.fetchObject(creativeId, AdCreative.class);
     }
 
 }

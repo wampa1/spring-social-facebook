@@ -123,4 +123,24 @@ public class AdTemplateTest extends AbstractFacebookApiTest {
         assertNotNull(adGroup);
     }
 
+    @Test public void getCreatives() {
+        mockServer.expect(requestTo("https://graph.facebook.com/act_123456/adcreatives"))
+                  .andExpect(method(GET))
+                  .andExpect(header("Authorization", "OAuth someAccessToken"))
+                  .andRespond(withResponse(jsonResource("testdata/adcreatives"), responseHeaders));
+
+        List<AdCreative> creatives = facebook.adOperations().getCreatives("123456");
+        assertNotNull(creatives);
+    }
+
+    @Test public void getCreative() {
+        mockServer.expect(requestTo("https://graph.facebook.com/123456"))
+                  .andExpect(method(GET))
+                  .andExpect(header("Authorization", "OAuth someAccessToken"))
+                  .andRespond(withResponse(jsonResource("testdata/adcreatives"), responseHeaders));
+
+        AdCreative creative = facebook.adOperations().getCreative("123456");
+        assertNotNull(creative);
+    }
+
 }
