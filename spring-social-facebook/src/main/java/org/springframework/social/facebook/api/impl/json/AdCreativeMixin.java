@@ -10,15 +10,15 @@ class AdCreativeMixin {
 
     @JsonCreator
     AdCreativeMixin(@JsonProperty("name") String name,
-                    @JsonProperty("type") String type,
+                    @JsonProperty("type") int type,
                     @JsonProperty("object_id") long objectId,
                     @JsonProperty("body") String body,
                     @JsonProperty("image_hash") String imageHash,
                     @JsonProperty("image_url") String imageUrl,
                     @JsonProperty("creative_id") long creativeId,
-                    @JsonProperty("count_current_adgroups") String countCurrentAdGroups,
+                    @JsonProperty("count_current_adgroups") int countCurrentAdGroups,
                     @JsonProperty("title") String title,
-                    @JsonProperty("run_status") String runStatus,
+                    @JsonProperty("run_status") int runStatus,
                     @JsonProperty("link_url") String linkUrl,
                     @JsonProperty("preview_url") String previewUrl,
                     @JsonProperty("view_tag") String viewTag,
