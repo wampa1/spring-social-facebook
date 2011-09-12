@@ -131,16 +131,50 @@ public class AdTemplateTest extends AbstractFacebookApiTest {
 
         List<AdCreative> creatives = facebook.adOperations().getCreatives("123456");
         assertNotNull(creatives);
+        assertEquals(5, creatives.size());
+        
+        AdCreative creative = creatives.get(0);
+        assertNotNull(creative);
+        assertEquals("", creative.getViewTag());
+        assertEquals(Arrays.asList(), creative.getAltViewTags());
+        assertEquals(6003608508993l, creative.getCreativeId());
+        assertEquals(2, creative.getType());
+        assertEquals("", creative.getTitle());
+        assertEquals("this is some ad copy", creative.getBody());
+        assertEquals("1b1134eae61cdd6d9be8499b8dcbe663", creative.getImageHash());
+        assertEquals("http://www.facebook.com/demomotors?sk=wall", creative.getLinkUrl());
+        assertEquals(125614587505822l, creative.getObjectId());
+        assertEquals("Demo Motors-00", creative.getName());
+        assertEquals(1, creative.getRunStatus());
+        assertEquals("http://www.facebook.com/ads/api/creative_preview.php?cid=6003608508993", creative.getPreviewUrl());
+        assertEquals(0, creative.getCountCurrentAdGroups());
+        assertEquals("6003608508993", creative.getId());
+        assertEquals("http://creative.ak.fbcdn.net/v41818/flyers/35/10/1315831679242172105_1_e0cee20a.jpg", creative.getImageUrl());
     }
 
     @Test public void getCreative() {
         mockServer.expect(requestTo("https://graph.facebook.com/123456"))
                   .andExpect(method(GET))
                   .andExpect(header("Authorization", "OAuth someAccessToken"))
-                  .andRespond(withResponse(jsonResource("testdata/adcreatives"), responseHeaders));
+                  .andRespond(withResponse(jsonResource("testdata/adcreative"), responseHeaders));
 
         AdCreative creative = facebook.adOperations().getCreative("123456");
         assertNotNull(creative);
+        assertEquals("", creative.getViewTag());
+        assertEquals(Arrays.asList(), creative.getAltViewTags());
+        assertEquals(6003608508993l, creative.getCreativeId());
+        assertEquals(2, creative.getType());
+        assertEquals("", creative.getTitle());
+        assertEquals("this is some ad copy", creative.getBody());
+        assertEquals("1b1134eae61cdd6d9be8499b8dcbe663", creative.getImageHash());
+        assertEquals("http://www.facebook.com/demomotors?sk=wall", creative.getLinkUrl());
+        assertEquals(125614587505822l, creative.getObjectId());
+        assertEquals("Demo Motors-00", creative.getName());
+        assertEquals(1, creative.getRunStatus());
+        assertEquals("http://www.facebook.com/ads/api/creative_preview.php?cid=6003608508993", creative.getPreviewUrl());
+        assertEquals(0, creative.getCountCurrentAdGroups());
+        assertEquals("6003608508993", creative.getId());
+        assertEquals("http://creative.ak.fbcdn.net/v41818/flyers/35/10/1315831679242172105_1_e0cee20a.jpg", creative.getImageUrl());
     }
-
+    
 }

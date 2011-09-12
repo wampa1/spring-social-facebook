@@ -12,15 +12,15 @@ import java.util.List;
 public class AdCreative {
 
 	private String name;
-	private String type;
+	private int type;
 	private long objectId;
 	private String body;
 	private String imageHash;
 	private String imageUrl;
 	private long creativeId;
-	private String countCurrentAdGroups; //?? A string?
+	private int countCurrentAdGroups; //?? A string?
 	private String title;
-	private String runStatus;
+	private int runStatus;
 	private String linkUrl;
 	private String previewUrl;
 	private String viewTag;
@@ -29,7 +29,7 @@ public class AdCreative {
 	private String urlTags;
 
 	
-	public AdCreative(String name, String type, long objectId, String body, String imageHash, String imageUrl, long creativeId, String countCurrentAdGroups, String title, String runStatus, String linkUrl, String previewUrl, String viewTag, List<String> altViewTags, String id, String urlTags) {
+	public AdCreative(String name, int type, long objectId, String body, String imageHash, String imageUrl, long creativeId, int countCurrentAdGroups, String title, int runStatus, String linkUrl, String previewUrl, String viewTag, List<String> altViewTags, String id, String urlTags) {
         this.name = name;
         this.type = type;
         this.objectId = objectId;
@@ -54,10 +54,10 @@ public class AdCreative {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getType() {
+	public int getType() {
 		return type;
 	}
-	public void setType(String type) {
+	public void setType(int type) {
 		this.type = type;
 	}
 	public long getObjectId() {
@@ -90,10 +90,10 @@ public class AdCreative {
 	public void setCreativeId(long creativeId) {
 		this.creativeId = creativeId;
 	}
-	public String getCountCurrentAdGroups() {
+	public int getCountCurrentAdGroups() {
 		return countCurrentAdGroups;
 	}
-	public void setCountCurrentAdGroups(String countCurrentAdGroups) {
+	public void setCountCurrentAdGroups(int countCurrentAdGroups) {
 		this.countCurrentAdGroups = countCurrentAdGroups;
 	}
 	public String getTitle() {
@@ -102,10 +102,10 @@ public class AdCreative {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-	public String getRunStatus() {
+	public int getRunStatus() {
 		return runStatus;
 	}
-	public void setRunStatus(String runStatus) {
+	public void setRunStatus(int runStatus) {
 		this.runStatus = runStatus;
 	}
 	public String getLinkUrl() {
