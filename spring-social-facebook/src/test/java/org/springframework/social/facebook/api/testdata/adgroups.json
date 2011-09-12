@@ -97,7 +97,10 @@
           "51",
           "6"
         ],
-        "broad_age": 1
+        "broad_age": 1,
+        "keywords": [
+          "dirtbikes"
+        ]
       },
       "start_time": null,
       "end_time": null,
