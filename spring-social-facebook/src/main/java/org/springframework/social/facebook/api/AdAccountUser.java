@@ -4,9 +4,9 @@ import java.util.List;
 
 public class AdAccountUser {
 
-    private String uid;
-    private List<Integer> permissions;
-    private int role;
+    private final String uid;
+    private final List<Integer> permissions;
+    private final int role;
 
     public AdAccountUser(String uid, List<Integer> permissions, int role) {
         this.uid = uid;
@@ -18,24 +18,12 @@ public class AdAccountUser {
         return uid;
     }
 
-    public void setUid(String uid) {
-        this.uid = uid;
-    }
-
     public List<Integer> getPermissions() {
         return permissions;
     }
 
-    public void setPermissions(List<Integer> permissions) {
-        this.permissions = permissions;
-    }
-
     public int getRole() {
         return role;
-    }
-
-    public void setRole(int role) {
-        this.role = role;
     }
 
 }

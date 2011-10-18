@@ -35,7 +35,7 @@
             "id": "6",
             "name": "California"
           }
-        ], 
+        ],
         "cities": [
           {
             "id": "2420467",
@@ -45,14 +45,14 @@
             "id": "2532970",
             "name": "Burlington, VT"
           }
-        ], 
+        ],
         "zips": [
           "05401",
           "05446",
           "90210",
           "90266",
           "90267"
-        ], 
+        ],
         "countries": [
           "US",
           "CA"
@@ -74,17 +74,57 @@
         "relationship_statuses": [
           1,
           2,
-          3
+          3,
+          4
         ],
         "education_statuses": [
+          1,
+          2,
           3
-        ], 
+        ],
+        "genders": [
+          1,
+          2
+        ],
+        "college_networks": [
+          {
+            "id": "16777220",
+            "name": "Yale"
+          }
+        ],
+        "college_majors": [
+          "business",
+          "computer science"
+        ],
+        "college_years": [
+          2012,
+          2013,
+          2014,
+          2015
+        ],
+        "interested_in": [
+          1,
+          2
+        ],
+        "work_networks": [
+          {
+            "id": "50432078",
+            "name": "IBM"
+          }
+        ],
+        "user_event": 1,
+        "connections": [
+          {
+            "id": "125614587505822",
+            "name": "Demo Motors"
+          }
+        ],
         "excluded_connections": [
           {
             "id": "125614587505822",
             "name": "Demo Motors"
           }
-        ], 
+        ],
         "friends_of_connections": [
           {
             "id": "47190376042235",

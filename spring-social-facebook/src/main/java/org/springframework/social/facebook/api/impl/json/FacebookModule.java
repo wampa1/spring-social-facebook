@@ -27,7 +27,6 @@ import org.springframework.social.facebook.api.AdTargeting;
 import org.springframework.social.facebook.api.Album;
 import org.springframework.social.facebook.api.Checkin;
 import org.springframework.social.facebook.api.CheckinPost;
-import org.springframework.social.facebook.api.City;
 import org.springframework.social.facebook.api.Comment;
 import org.springframework.social.facebook.api.EducationEntry;
 import org.springframework.social.facebook.api.Event;
@@ -46,7 +45,6 @@ import org.springframework.social.facebook.api.Photo.Image;
 import org.springframework.social.facebook.api.PhotoPost;
 import org.springframework.social.facebook.api.Post;
 import org.springframework.social.facebook.api.Reference;
-import org.springframework.social.facebook.api.Region;
 import org.springframework.social.facebook.api.StatusPost;
 import org.springframework.social.facebook.api.SwfPost;
 import org.springframework.social.facebook.api.Tag;
@@ -99,10 +97,10 @@ public class FacebookModule extends SimpleModule {
 		context.setMixInAnnotations(AdAccount.class, AdAccountMixin.class);
 		context.setMixInAnnotations(AdAccountUser.class, AdAccountUserMixin.class);
 		context.setMixInAnnotations(AdAccountGroup.class, AdAccountGroupMixin.class);
+		context.setMixInAnnotations(AdAccountGroup.User.class, AdAccountGroupMixin.UserMixin.class);
+		context.setMixInAnnotations(AdAccountGroup.AdAccount.class, AdAccountGroupMixin.AdAccountMixIn.class);
 		context.setMixInAnnotations(AdGroup.class, AdGroupMixin.class);
 		context.setMixInAnnotations(AdTargeting.class, AdTargetingMixin.class);
-		context.setMixInAnnotations(City.class, IdNameMixin.class);
-		context.setMixInAnnotations(Region.class, IdNameMixin.class);
 		context.setMixInAnnotations(AdCreative.class, AdCreativeMixin.class);
 	}
 }

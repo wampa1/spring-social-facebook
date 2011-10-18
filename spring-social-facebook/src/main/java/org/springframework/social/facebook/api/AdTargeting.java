@@ -6,16 +6,16 @@ public class AdTargeting {
 
         // Location Targets
         private List<String> countries;
-        private List<City> cities;
+        private List<Reference> cities;
         private List<String> zips;
-        private List<Region> regions;
+        private List<Reference> regions;
         private String radius;
         private List<String> locales;
 
         // Likes / Interest Targets
         private List<String> keywords;
-        private List<UserAdCluster> userAdClusters;
-        private List<Integer> interestedIn;
+        private List<Reference> userAdClusters;
+        private List<Gender> interestedIn;
 
         // Demographics / Events
         private List<Gender> genders;
@@ -26,18 +26,18 @@ public class AdTargeting {
         private UserEvent userEvent;
 
         // Facebook Connections
-        private List<String> connections;
-        private List<String> excludedConnections;
-        private List<String> friendsOfConnections;
+        private List<Reference> connections;
+        private List<Reference> excludedConnections;
+        private List<Reference> friendsOfConnections;
 
         // Education and Work
-        private List<String> collegeNetworks;
-        private List<String> workNetworks;
+        private List<Reference> collegeNetworks;
+        private List<Reference> workNetworks;
         private List<EducationStatus> educationStatuses;
         private List<Integer> collegeYears;
         private List<String> collegeMajors;
 
-        public AdTargeting(List<String> countries, List<City> cities, List<String> zips, List<Region> regions, String radius, List<String> locales, List<String> keywords, List<UserAdCluster> userAdClusters, List<Integer> interestedIn, List<Gender> genders, Integer ageMin, Integer ageMax, BroadAge broadAge, List<RelationshipStatus> relationshipStatuses, UserEvent userEvent, List<String> connections, List<String> excludedConnections, List<String> friendsOfConnections, List<String> collegeNetworks, List<String> workNetworks, List<EducationStatus> educationStatuses, List<Integer> collegeYears, List<String> collegeMajors) {
+        public AdTargeting(List<String> countries, List<Reference> cities, List<String> zips, List<Reference> regions, String radius, List<String> locales, List<String> keywords, List<Reference> userAdClusters, List<Gender> interestedIn, List<Gender> genders, Integer ageMin, Integer ageMax, BroadAge broadAge, List<RelationshipStatus> relationshipStatuses, UserEvent userEvent, List<Reference> connections, List<Reference> excludedConnections, List<Reference> friendsOfConnections, List<Reference> collegeNetworks, List<Reference> workNetworks, List<EducationStatus> educationStatuses, List<Integer> collegeYears, List<String> collegeMajors) {
         this.countries = countries;
         this.cities = cities;
         this.zips = zips;
@@ -79,11 +79,11 @@ public class AdTargeting {
                 this.countries = countries;
         }
 
-        public List<City> getCities() {
+        public List<Reference> getCities() {
                 return cities;
         }
 
-        public void setCities(List<City> cities) {
+        public void setCities(List<Reference> cities) {
                 this.cities = cities;
         }
 
@@ -95,11 +95,11 @@ public class AdTargeting {
                 this.zips = zips;
         }
 
-        public List<Region> getRegions() {
+        public List<Reference> getRegions() {
                 return regions;
         }
 
-        public void setRegions(List<Region> regions) {
+        public void setRegions(List<Reference> regions) {
                 this.regions = regions;
         }
 
@@ -127,19 +127,19 @@ public class AdTargeting {
                 this.keywords = keywords;
         }
 
-        public List<UserAdCluster> getUserAdClusters() {
+        public List<Reference> getUserAdClusters() {
                 return userAdClusters;
         }
 
-        public void setUserAdClusters(List<UserAdCluster> userAdClusters) {
+        public void setUserAdClusters(List<Reference> userAdClusters) {
                 this.userAdClusters = userAdClusters;
         }
 
-        public List<Integer> getInterestedIn() {
+        public List<Gender> getInterestedIn() {
                 return interestedIn;
         }
 
-        public void setInterestedIn(List<Integer> interestedIn) {
+        public void setInterestedIn(List<Gender> interestedIn) {
                 this.interestedIn = interestedIn;
         }
 
@@ -183,43 +183,43 @@ public class AdTargeting {
                 this.userEvent = userEvent;
         }
 
-        public List<String> getConnections() {
+        public List<Reference> getConnections() {
                 return connections;
         }
 
-        public void setConnections(List<String> connections) {
+        public void setConnections(List<Reference> connections) {
                 this.connections = connections;
         }
 
-        public List<String> getExcludedConnections() {
+        public List<Reference> getExcludedConnections() {
                 return excludedConnections;
         }
 
-        public void setExcludedConnections(List<String> excludedConnections) {
+        public void setExcludedConnections(List<Reference> excludedConnections) {
                 this.excludedConnections = excludedConnections;
         }
 
-        public List<String> getFriendsOfConnections() {
+        public List<Reference> getFriendsOfConnections() {
                 return friendsOfConnections;
         }
 
-        public void setFriendsOfConnections(List<String> friendsOfConnections) {
+        public void setFriendsOfConnections(List<Reference> friendsOfConnections) {
                 this.friendsOfConnections = friendsOfConnections;
         }
 
-        public List<String> getCollegeNetworks() {
+        public List<Reference> getCollegeNetworks() {
                 return collegeNetworks;
         }
 
-        public void setCollegeNetworks(List<String> collegeNetworks) {
+        public void setCollegeNetworks(List<Reference> collegeNetworks) {
                 this.collegeNetworks = collegeNetworks;
         }
 
-        public List<String> getWorkNetworks() {
+        public List<Reference> getWorkNetworks() {
                 return workNetworks;
         }
 
-        public void setWorkNetworks(List<String> workNetworks) {
+        public void setWorkNetworks(List<Reference> workNetworks) {
                 this.workNetworks = workNetworks;
         }
 
