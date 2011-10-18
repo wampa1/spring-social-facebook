@@ -5,39 +5,39 @@ import java.util.List;
 public class AdTargeting {
 
 	// Location Targets
-	private List<String> countries;
-	private List<City> cities;
-	private List<String> zips;
-	private List<Region> regions;
-	private String radius;
-	private List<String> locales;
+	private final List<String> countries;
+	private final List<Reference> cities;
+	private final List<String> zips;
+	private final List<Reference> regions;
+	private final String radius;
+	private final List<String> locales;
 	
 	// Likes / Interest Targets	
-	private List<String> keywords;
-	private List<UserAdCluster> userAdClusters;	
-	private List<Integer> interestedIn;
+	private final List<String> keywords;
+	private final List<Reference> userAdClusters;	
+	private final List<Gender> interestedIn;
 	
 	// Demographics / Events
-	private List<Gender> genders;
-	private Integer ageMin;
-	private Integer ageMax;
-	private BroadAge broadAge;
-	private List<RelationshipStatus> relationshipStatuses;
-	private UserEvent userEvent;
+	private final List<Gender> genders;
+	private final Integer ageMin;
+	private final Integer ageMax;
+	private final BroadAge broadAge;
+	private final List<RelationshipStatus> relationshipStatuses;
+	private final UserEvent userEvent;
 	
 	// Facebook Connections
-	private List<String> connections;
-	private List<String> excludedConnections;
-	private List<String> friendsOfConnections;
+	private final List<Reference> connections;
+	private final List<Reference> excludedConnections;
+	private final List<Reference> friendsOfConnections;
 	
 	// Education and Work
-	private List<String> collegeNetworks;
-	private List<String> workNetworks;
-	private List<EducationStatus> educationStatuses;
-	private List<Integer> collegeYears;
-	private List<String> collegeMajors;
+	private final List<Reference> collegeNetworks;
+	private final List<Reference> workNetworks;
+	private final List<EducationStatus> educationStatuses;
+	private final List<Integer> collegeYears;
+	private final List<String> collegeMajors;
 	
-	public AdTargeting(List<String> countries, List<City> cities, List<String> zips, List<Region> regions, String radius, List<String> locales, List<String> keywords, List<UserAdCluster> userAdClusters, List<Integer> interestedIn, List<Gender> genders, Integer ageMin, Integer ageMax, BroadAge broadAge, List<RelationshipStatus> relationshipStatuses, UserEvent userEvent, List<String> connections, List<String> excludedConnections, List<String> friendsOfConnections, List<String> collegeNetworks, List<String> workNetworks, List<EducationStatus> educationStatuses, List<Integer> collegeYears, List<String> collegeMajors) {
+	public AdTargeting(List<String> countries, List<Reference> cities, List<String> zips, List<Reference> regions, String radius, List<String> locales, List<String> keywords, List<Reference> userAdClusters, List<Gender> interestedIn, List<Gender> genders, Integer ageMin, Integer ageMax, BroadAge broadAge, List<RelationshipStatus> relationshipStatuses, UserEvent userEvent, List<Reference> connections, List<Reference> excludedConnections, List<Reference> friendsOfConnections, List<Reference> collegeNetworks, List<Reference> workNetworks, List<EducationStatus> educationStatuses, List<Integer> collegeYears, List<String> collegeMajors) {
         this.countries = countries;
         this.cities = cities;
         this.zips = zips;
@@ -63,10 +63,6 @@ public class AdTargeting {
         this.collegeMajors = collegeMajors;
     }
 
-    public void setGenders( List<Gender> genders ) {
-		this.genders = genders;
-	}
-	
 	public List<Gender> getGenders( ) {
 		return genders;
 	}
@@ -75,182 +71,93 @@ public class AdTargeting {
 		return countries;
 	}
 
-	public void setCountries(List<String> countries) {
-		this.countries = countries;
-	}
-
-	public List<City> getCities() {
+	public List<Reference> getCities() {
 		return cities;
-	}
-
-	public void setCities(List<City> cities) {
-		this.cities = cities;
 	}
 
 	public List<String> getZips() {
 		return zips;
 	}
 
-	public void setZips(List<String> zips) {
-		this.zips = zips;
-	}
-
-	public List<Region> getRegions() {
+	public List<Reference> getRegions() {
 		return regions;
-	}
-
-	public void setRegions(List<Region> regions) {
-		this.regions = regions;
 	}
 
 	public String getRadius() {
 		return radius;
 	}
 
-	public void setRadius(String radius) {
-		this.radius = radius;
-	}
-
 	public List<String> getLocales() {
 		return locales;
-	}
-
-	public void setLocales(List<String> locales) {
-		this.locales = locales;
 	}
 
 	public List<String> getKeywords() {
 		return keywords;
 	}
 
-	public void setKeywords(List<String> keywords) {
-		this.keywords = keywords;
-	}
-
-	public List<UserAdCluster> getUserAdClusters() {
+	public List<Reference> getUserAdClusters() {
 		return userAdClusters;
 	}
 
-	public void setUserAdClusters(List<UserAdCluster> userAdClusters) {
-		this.userAdClusters = userAdClusters;
-	}
-
-	public List<Integer> getInterestedIn() {
+	public List<Gender> getInterestedIn() {
 		return interestedIn;
-	}
-
-	public void setInterestedIn(List<Integer> interestedIn) {
-		this.interestedIn = interestedIn;
 	}
 
 	public Integer getAgeMin() {
 		return ageMin;
 	}
 
-	public void setAgeMin(Integer ageMin) {
-		this.ageMin = ageMin;
-	}
-
 	public Integer getAgeMax() {
 		return ageMax;
-	}
-
-	public void setAgeMax(Integer ageMax) {
-		this.ageMax = ageMax;
 	}
 
 	public BroadAge getBroadAge() {
 		return broadAge;
 	}
 
-	public void setBroadAge(BroadAge broadAge) {
-		this.broadAge = broadAge;
-	}
-
 	public List<RelationshipStatus> getRelationshipStatuses() {
 		return relationshipStatuses;
-	}
-
-	public void setRelationshipStatuses(List<RelationshipStatus> relationshipStatus) {
-		this.relationshipStatuses = relationshipStatus;
 	}
 
 	public UserEvent getUserEvent() {
 		return userEvent;
 	}
 
-	public void setUserEvent(UserEvent userEvent) {
-		this.userEvent = userEvent;
-	}
-
-	public List<String> getConnections() {
+	public List<Reference> getConnections() {
 		return connections;
 	}
 
-	public void setConnections(List<String> connections) {
-		this.connections = connections;
-	}
-
-	public List<String> getExcludedConnections() {
+	public List<Reference> getExcludedConnections() {
 		return excludedConnections;
 	}
 
-	public void setExcludedConnections(List<String> excludedConnections) {
-		this.excludedConnections = excludedConnections;
-	}
-
-	public List<String> getFriendsOfConnections() {
+	public List<Reference> getFriendsOfConnections() {
 		return friendsOfConnections;
 	}
 
-	public void setFriendsOfConnections(List<String> friendsOfConnections) {
-		this.friendsOfConnections = friendsOfConnections;
-	}
-
-	public List<String> getCollegeNetworks() {
+	public List<Reference> getCollegeNetworks() {
 		return collegeNetworks;
 	}
 
-	public void setCollegeNetworks(List<String> collegeNetworks) {
-		this.collegeNetworks = collegeNetworks;
-	}
-
-	public List<String> getWorkNetworks() {
+	public List<Reference> getWorkNetworks() {
 		return workNetworks;
-	}
-
-	public void setWorkNetworks(List<String> workNetworks) {
-		this.workNetworks = workNetworks;
 	}
 
 	public List<EducationStatus> getEducationStatuses() {
 		return educationStatuses;
 	}
 
-	public void setEducationStatuses(List<EducationStatus> educationStatuses) {
-		this.educationStatuses = educationStatuses;
-	}
-
 	public List<Integer> getCollegeYears() {
 		return collegeYears;
-	}
-
-	public void setCollegeYears(List<Integer> collegeYears) {
-		this.collegeYears = collegeYears;
 	}
 
 	public List<String> getCollegeMajors() {
 		return collegeMajors;
 	}
 
-	public void setCollegeMajors(List<String> collegeMajors) {
-		this.collegeMajors = collegeMajors;
-	}
-
-	
 	public enum Gender {
 		UNUSED_0(0), MALE(1), FEMALE(2);
-		private int gender;
+		private final int gender;
 		private Gender(int gender){ this.gender = gender; }
 		public int getGender() { return gender; }
 		public static Gender valueOf(int gender) {
@@ -273,7 +180,7 @@ public class AdTargeting {
 
 	public enum BroadAge {
 		UNUSED_0(0), ENABLED(1);
-		private int broadAge;
+		private final int broadAge;
 		private BroadAge(int broadAge){ this.broadAge = broadAge; }
 		public int getBroadAge() { return broadAge; }
 		public static BroadAge valueOf(int broadAge) {
@@ -293,7 +200,7 @@ public class AdTargeting {
 	
 	public enum RelationshipStatus {
 		UNUSED_0(0), SINGLE(1), IN_RELATIONSHIP(2), MARRIED(3), ENGAGED(4);
-		private int relationshipStatus;
+		private final int relationshipStatus;
 		private RelationshipStatus(int relationshipStatus){ this.relationshipStatus = relationshipStatus; }
 		public int getRelationshipStatus() { return relationshipStatus; }
 		public static RelationshipStatus valueOf(int relationshipStatus) {
@@ -322,7 +229,7 @@ public class AdTargeting {
 
 	public enum UserEvent {
 		UNUSED_0(0), BIRTHDAY(1);
-		private int userEvent;
+		private final int userEvent;
 		private UserEvent(int userEvent){ this.userEvent = userEvent; }
 		public int getUserEvent() { return userEvent; }
 		public static UserEvent valueOf(int userEvent) {
@@ -342,7 +249,7 @@ public class AdTargeting {
 
 	public enum EducationStatus {
 		UNUSED_0(0), HIGH_SCHOOL(1), UNDERGRAD(2), ALUM(3);
-		private int educationStatus;
+		private final int educationStatus;
 		private EducationStatus(int educationStatus){ this.educationStatus = educationStatus; }
 		public int getEducationStatus() { return educationStatus; }
 		public static EducationStatus valueOf(int educationStatus) {

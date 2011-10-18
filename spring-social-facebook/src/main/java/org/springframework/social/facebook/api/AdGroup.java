@@ -16,23 +16,23 @@ import java.util.Map;
 
 public class AdGroup {
 
-		private long adId;
-		private long id;
-		private long accountId;
-		private long campaignId;
-		private String name;
-		private int adStatus;
-		private int adGroupStatus;
-		private int bidType;
-		private String maxBid; //?? String?
-		private AdTargeting targeting;
-		private List<Long> creativeIds;
-		private long adGroupId;
-		private Date startTime;
-		private Date endTime;
-		private Date updatedTime;
-		private Map<String, String> bidInfo;
-		private List<String> disapproveReasonDescriptions;
+		private final long adId;
+		private final long id;
+		private final long accountId;
+		private final long campaignId;
+		private final String name;
+		private final int adStatus;
+		private final int adGroupStatus;
+		private final int bidType;
+		private final String maxBid; //?? String?
+		private final AdTargeting targeting;
+		private final List<Long> creativeIds;
+		private final long adGroupId;
+		private final Date startTime;
+		private final Date endTime;
+		private final Date updatedTime;
+		private final Map<String, String> bidInfo;
+		private final List<String> disapproveReasonDescriptions;
 		
 //		public AdGroup() {
 //			super();
@@ -67,141 +67,68 @@ public class AdGroup {
 			return adId;
 		}
 
-		public void setAdId(long adId) {
-			this.adId = adId;
-		}
-
 		public long getId() {
             return id;
-        }
-
-        public void setId(long id) {
-            this.id = id;
         }
 
         public long getAccountId() {
             return accountId;
         }
 
-        public void setAccountId(long accountId) {
-            this.accountId = accountId;
-        }
-
         public long getCampaignId() {
 			return campaignId;
-		}
-
-		public void setCampaignId(long campaignId) {
-			this.campaignId = campaignId;
 		}
 
 		public String getName() {
 			return name;
 		}
 
-		public void setName(String name) {
-			this.name = name;
-		}
-
 		public int getAdStatus() {
             return adStatus;
-        }
-
-        public void setAdStatus(int adStatus) {
-            this.adStatus = adStatus;
         }
 
         public int getAdGroupStatus() {
 			return adGroupStatus;
 		}
 
-		public void setAdGroupStatus(int adGroupStatus) {
-			this.adGroupStatus = adGroupStatus;
-		}
-
 		public int getBidType() {
 			return bidType;
-		}
-
-		public void setBidType(int bidType) {
-			this.bidType = bidType;
 		}
 
 		public String getMaxBid() {
 			return maxBid;
 		}
 
-		public void setMaxBid(String maxBid) {
-			this.maxBid = maxBid;
-		}
-		
 		public AdTargeting getTargeting() {
 			return targeting;
-		}
-
-		public void setTargeting(AdTargeting targeting) {
-			this.targeting = targeting;
 		}
 
 		public List<Long> getCreativeIds() {
 			return creativeIds;
 		}
 
-		public void setCreativeIds(List<Long> creativeIds) {
-			this.creativeIds = creativeIds;
-		}
-
 		public long getAdGroupId() {
 			return adGroupId;
-		}
-
-		public void setAdGroupId(long adGroupId) {
-			this.adGroupId = adGroupId;
 		}
 
 		public Date getStartTime() {
 			return startTime;
 		}
 
-		public void setStartTime(Date startTime) {
-			this.startTime = startTime;
-		}
-
 		public Date getEndTime() {
             return endTime;
-        }
-
-        public void setEndTime(Date endTime) {
-            this.endTime = endTime;
         }
 
         public Date getUpdatedTime() {
 			return updatedTime;
 		}
 
-		public void setUpdatedTime(Date updatedTime) {
-			this.updatedTime = updatedTime;
-		}
-
 		public Map<String, String> getBidInfo() {
 			return bidInfo;
-		}
-
-		public void setBidInfo(Map<String, String> bidInfo) {
-			this.bidInfo = bidInfo;
 		}
 
 		public List<String> getDisapproveReasonDescriptions() {
 			return disapproveReasonDescriptions;
 		}
 
-		public void setDisapproveReasonDescriptions(
-				List<String> disapproveReasonDescriptions) {
-			this.disapproveReasonDescriptions = disapproveReasonDescriptions;
-		}
-		
-		
-		
-		
-		
 }
